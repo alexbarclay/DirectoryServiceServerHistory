@@ -1,0 +1,36 @@
+digraph directoryserver {
+ node [shape=rectangle]
+
+"University Michigan slapd" -> "Sun Directory Services";
+"University Michigan slapd" ->"Netscape Directory Server";
+"University Michigan slapd" -> "OpenLDAP (OSS)(C)(PKG Repository)";
+
+"Sun Directory Services" -> "Netscape/iPlanet Directory Server" ;
+"Netscape Directory Server" -> "Netscape/iPlanet Directory Server" ;
+
+"Netscape/iPlanet Directory Server" -> "AOL Netscape Directory Server";
+"Netscape/iPlanet Directory Server" -> "Sun ONE Directory Server";
+"Sun ONE Directory Server" -> "Java System Directory Server" ;
+
+"AOL Netscape Directory Server" -> "Red Hat Fedora Directory Server";
+"Red Hat Fedora Directory Server" -> "389 Directory Server(OSS-GPL/MPL)";
+"389 Directory Server(OSS-GPL/MPL)" ->  "Red Hat Directory Server($$$)";
+
+"Java System Directory Server" -> "Sun Directory Server Enterprise Edition" ;
+"Java System Directory Server" -> "Sun Directory Server (200k RTU Solaris <10U5)";
+"Sun Directory Server (200k RTU Solaris <10U5)" -> "Sun Directory Server Enterprise Edition" [label="part of"];
+"Sun Directory Server Enterprise Edition" -> "Oracle Directory Server Enterprise Edition($$$)";
+
+"OpenDS (Java)(OSS-CDDL)" -> "Oracle Unified Directory($$$)";
+"OpenDS (Java)(OSS-CDDL)" -> "OpenDJ (OSS)"
+
+"OpenLDAP (OSS)(C)(PKG Repository)" -> "Apple Open Directory";
+"ApacheDS (OSS) (Java)";
+
+
+"Oracle Directory Server Enterprise Edition($$$)" [color=red];
+"Oracle Unified Directory($$$)" [color=red];
+"OpenLDAP (OSS)(C)(PKG Repository)" [color=pink];
+"Sun Directory Server (200k RTU Solaris <10U5)" [color=pink];
+
+}
